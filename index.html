@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Aether Run — a playable browser platformer built in 3D.">
+    <meta name="theme-color" content="#070707">
+    <title>Aether Run — A world above the clouds</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script type="importmap">{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js" } }</script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Aether Run home">
+        <svg viewBox="0 0 42 42" aria-hidden="true"><path d="M21 3 38 13v16L21 39 4 29V13Z"/><path d="m12 26 9-16 9 16-9-5Z"/></svg><span>AETHER<br>RUN</span>
+      </a>
+      <nav class="main-nav" aria-label="Primary navigation"><a href="#world">World</a><a href="#features">Features</a><a href="#how-to-play">How to play</a></nav>
+      <button class="sound-toggle" id="sound-toggle" type="button" aria-pressed="false"><span class="sound-bars" aria-hidden="true"><i></i><i></i><i></i></span><span>Sound off</span></button>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div id="game-canvas" class="game-canvas" aria-hidden="true"></div><div class="scene-wash"></div>
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> Playable in your browser</p>
+          <h1 id="hero-title"><span>Defy</span> the<br>distance.</h1>
+          <p class="hero-intro">A fast, atmospheric platformer suspended in a world that refuses to stand still.</p>
+          <button class="play-button" id="play-button" type="button"><span class="play-icon" aria-hidden="true">▶</span><span><b>Enter the world</b><small>No download required</small></span></button>
+        </div>
+        <div class="game-hud" id="game-hud" hidden>
+          <div class="hud-stat"><span>SHARDS</span><strong id="shard-count">00 / 07</strong></div><div class="hud-stat"><span>DISTANCE</span><strong id="distance-count">000m</strong></div><button id="restart-button" type="button">Restart <kbd>R</kbd></button>
+        </div>
+        <div class="game-message" id="game-message" role="status" aria-live="polite" hidden><span class="message-kicker">RUN COMPLETE</span><strong>You crossed the impossible.</strong><button type="button" id="play-again-button">Run it again</button></div>
+        <div class="hero-footer"><div class="hint"><span class="mouse-icon" aria-hidden="true"></span> Scroll to discover</div><div class="coordinates">SECTOR 07 / ALT. 2,480M<br>WIND: EAST-NORTHEAST</div><div class="hero-index">01 <span></span> 04</div></div>
+        <div class="touch-controls" id="touch-controls" hidden aria-label="Game controls"><div><button type="button" data-key="left" aria-label="Move left">←</button><button type="button" data-key="right" aria-label="Move right">→</button></div><button class="touch-jump" type="button" data-key="jump">Jump</button></div>
+      </section>
+
+      <section class="manifesto" id="world" aria-labelledby="world-title">
+        <div class="section-label"><span>02</span> / THE WORLD</div>
+        <div class="manifesto-copy"><p class="lead">The ground is gone.<br><em>Keep moving.</em></p><h2 id="world-title">Built for that one more try feeling.</h2><p>Read the wind, time your leap, and chase a path that assembles beneath your feet. Every run is a conversation between momentum and nerve.</p></div>
+        <div class="orbital-mark" aria-hidden="true"><span>AETHER / AETHER / AETHER /</span><i></i></div>
+      </section>
+
+      <section class="feature-section" id="features" aria-labelledby="features-title">
+        <div class="section-heading"><div class="section-label"><span>03</span> / BUILT DIFFERENT</div><h2 id="features-title">Simple to learn.<br>Hard to leave.</h2></div>
+        <div class="feature-grid">
+          <article class="feature-card feature-card--lime"><div class="feature-visual speed-lines"><span></span><span></span><span></span><i></i></div><p class="card-number">01 / 03</p><h3>Pure momentum</h3><p>Responsive movement that feels immediate, readable, and satisfying from the first jump.</p></article>
+          <article class="feature-card feature-card--dark"><div class="feature-visual terrain"><span></span><i></i><b></b></div><p class="card-number">02 / 03</p><h3>A shifting world</h3><p>Platforms drift, rotate, and reveal new routes as the environment wakes around you.</p></article>
+          <article class="feature-card feature-card--light"><div class="feature-visual prism"><span></span><i></i></div><p class="card-number">03 / 03</p><h3>Nothing wasted</h3><p>No install. No account. No clutter. Just hit play and find out how far you can go.</p></article>
+        </div>
+      </section>
+
+      <section class="controls-section" id="how-to-play" aria-labelledby="controls-title">
+        <div class="controls-intro"><div class="section-label"><span>04</span> / HOW TO PLAY</div><h2 id="controls-title">Move with intent.</h2><p>The rules fit in a breath. The rhythm takes a lifetime.</p></div>
+        <div class="control-list"><div><span>Move</span><p><kbd>A</kbd><kbd>D</kbd> or <kbd>←</kbd><kbd>→</kbd></p></div><div><span>Jump</span><p><kbd>Space</kbd></p></div><div><span>Restart</span><p><kbd>R</kbd></p></div></div>
+      </section>
+
+      <section class="final-cta" aria-labelledby="cta-title"><div class="cta-rings" aria-hidden="true"><i></i><i></i><i></i></div><p class="eyebrow"><span></span> The path is waiting</p><h2 id="cta-title">How far will<br>you go?</h2><button class="play-button play-button--dark" id="footer-play-button" type="button"><span class="play-icon" aria-hidden="true">▶</span><span><b>Start your run</b><small>Return to the game</small></span></button></section>
+    </main>
+
+    <footer class="site-footer"><a class="brand brand--footer" href="#top"><span>AETHER<br>RUN</span></a><p>An interactive concept experience.<br>Designed for the open web.</p><p class="footer-meta">© 2026 AETHER STUDIO<br>MADE ABOVE THE CLOUDS</p></footer>
+    <div class="loader" id="loader" role="status" aria-live="polite"><span class="loader-mark"></span><p>Assembling the world</p><div><i id="load-progress"></i></div></div>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
